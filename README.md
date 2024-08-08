@@ -56,7 +56,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/yourusername/futuretrack.git
+git clone https://github.com/daslimedev/futuretrack1.0.git 
 cd futuretrack
 Install dependencies:
 
