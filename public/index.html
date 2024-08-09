@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>FutureTrack</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <div id="homePage" class="home-page">
+        <header>
+            <h1><i class="fas fa-rocket"></i> FutureTrack</h1>
+            <nav>
+            </nav>
+        </header>
+        <main class="home-content">
+            <div class="hero">
+                <h2>Welcome to FutureTrack</h2>
+                <p>Explore your money trends easily for a determined future.</p>
+                <button id="enterAppBtn" class="btn btn-large" onclick="redirectToExpenseTracker()">   E N T E R A P P <i class="fas fa-chevron-right"></i>
+                    <div id="clip">
+                        <div id="leftTop" class="corner"></div>
+                        <div id="rightBottom" class="corner"></div>
+                        <div id="rightTop" class="corner"></div>
+                        <div id="leftBottom" class="corner"></div>
+                    </div>
+                    <span id="rightArrow" class="arrow"></span>
+                    <span id="leftArrow" class="arrow"></span></button>
+                <script>
+                    function redirectToExpenseTracker() {
+                        window.location.href = 'expensetracker.html';
+                    }
+                </script>
+                
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Real-time Tracking</h3>
+                    <p>Monitor your expenses as they happen</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Sleek Design</h3>
+                    <p>Enjoy a futuristic and intuitive interface</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-lock"></i>
+                    <h3>Secure</h3>
+                    <p>Your financial data is safe with us</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="appPage" class="app-page hidden">
+        </body>

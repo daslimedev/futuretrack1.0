@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutureTrack</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal hidden">
+        <div class="modal-content">
+            <button id="closeAlert" class="close-modal">&times;</button>  
+            <h2><i class="fas fa-user-astronaut"></i> Login</h2>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Username" required autocomplete="username">
+                <input type="password" id="password" placeholder="Password" required autocomplete="current-password">
+                <button type="submit" class="btn"><i class="fas fa-rocket"></i> Launch</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="showRegister">Register</a></p>
+            <p>Forgot password? <a href="#" id="showResetPassword">Reset Password</a></p>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal hidden">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2><i class="fas fa-user-plus"></i> Register</h2>
+            <form id="registerForm">
+                <input type="text" id="newUsername" placeholder="Username" required autocomplete="username">
+                <input type="email" id="email" placeholder="Email" required autocomplete="email">
+                <input type="password" id="newPassword" placeholder="Password" required autocomplete="new-password">
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" required autocomplete="new-password">
+                <button type="submit" class="btn"><i class="fas fa-user-astronaut"></i> Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Reset Password Modal -->
+    <div id="resetPasswordModal" class="modal hidden">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2><i class="fas fa-key"></i> Reset Password</h2>
+            <form id="resetPasswordForm">
+                <input type="email" id="resetEmail" placeholder="Email" required autocomplete="email">
+                <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Send Reset Link</button>
+            </form>
+        </div>
+    </div>
+
+    <header>
+        <h1><i class="fas fa-wallet"></i> FutureTrack</h1>
+        <nav>
+            <button id="loginBtn" class="btn"><i class="fas fa-sign-in-alt"></i> Login</button>
+            <button id="logoutBtn" class="btn hidden"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </nav>
+    </header>
+
+    <div id="customAlert" class="custom-alert hidden">
+        <span id="alertMessage"></span>
+        
+    </div>
+
+    <div id="welcomeMessage" class="welcome-message hidden">
+        <span id="welcomeText"></span>
+    </div>
+
+    <main>
+        <section id="dashboard">
+            <h2><i class="fas fa-tachometer-alt"></i> Dashboard</h2>
+            <div class="dashboard-grid">
+                <div class="dashboard-item">
+                    <h3><i class="fas fa-balance-scale"></i> Total Balance</h3>
+                    <div id="totalBalance">KES 0.00</div>
+                </div>
+                <div class="dashboard-item">
+                    <h3><i class="fas fa-hand-holding-usd"></i> Income</h3>
+                    <div id="totalIncome">KES 0.00</div>
+                </div>
+                <div class="dashboard-item">
+                    <h3><i class="fas fa-shopping-cart"></i> Expenses</h3>
+                    <div id="totalExpenses">KES 0.00</div>
+                </div>
+                <div class="dashboard-item">
+                    <h3><i class="far fa-calendar-alt"></i> Date</h3>
+                    <div id="currentDate"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="charts">
+            <h2><i class="fas fa-chart-pie"></i> Expense Breakdown</h2>
+            <div class="chart-container">
+                <canvas id="expenseChart"></canvas>
+            </div>
+        </section>
+
+        <section id="addTransaction">
+            <h2><i class="fas fa-plus-circle"></i> Add Transaction</h2>
+            <form id="transactionForm">
+                <input type="text" id="description" placeholder="Description" required>
+                <input type="number" id="amount" placeholder="Amount" required>
+                <select id="type">
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                <input type="date" id="transactionDate" required>
+                <button type="submit" class="btn"><i class="fas fa-save"></i> Add</button>
+            </form>
+        </section>
+
+        <section id="history">
+            <h2><i class="fas fa-history"></i> Transaction History</h2>
+            <ul id="transactionList"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 FutureTrack | <i class="fas fa-code"></i> with <i class="fas fa-heart"></i> by Surge Brian.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
