@@ -434,6 +434,7 @@ footer {
     .modal-content {
         width: 90%;
         margin-top: 70px;
+        background-color: #000000b6;
     }
 
     .modal-content h2 {
